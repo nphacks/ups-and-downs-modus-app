@@ -6,5 +6,20 @@
       "path": "/graphql",
       "auth": "bearer-token"
     }
+  },
+  "models": {
+    "text-generator": {
+      "sourceModel": "meta-llama/Meta-Llama-3.1-8B-Instruct", 
+      "provider": "hugging-face", 
+      "connection": "hypermode" 
+    }
+  },
+  "connections": {
+    "my-neo4j": {
+      "type": "neo4j",
+      "dbUri": "neo4j+s://40717899.databases.neo4j.io",
+      "username": "neo4j",
+      "password": "4pN-zBkQjOCICmQqOceIJNkG95qeSTQI9K-GEV-sxrQ"
+    }
   }
 }
