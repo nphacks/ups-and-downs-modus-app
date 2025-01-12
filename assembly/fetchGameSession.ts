@@ -584,7 +584,8 @@ export function fetchGameSession(sessionId: string, maxAge: i32): GameSessionDat
     const record = checkResult.Records[0]
     const existingSession = record.getValue<string>("session")
     
-    if (existingSession) {
+    if (existingSession && existingSession != 'ul') {
+      console.log(existingSession)
       // Parse the stored JSON into a temporary object
       const parsedData = JSON.parse<JsonGameSession>(existingSession)
       

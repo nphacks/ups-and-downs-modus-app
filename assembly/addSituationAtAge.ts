@@ -31,7 +31,7 @@ export function AddSituationAtAge(
   let query = `
     MATCH (gs:GameSession {gamesession_id: $gameSessionId})-[:HAS_PLAYER]->(p:Player)
 
-    CREATE (a:Age {age: $age, gamesession_id: $gameSessionId}) 
+    MERGE (a:Age {age: $age, gamesession_id: $gameSessionId})  
     
     MERGE (p)-[:AT_AGE {gamesession_id: $gameSessionId}]->(a)
 
