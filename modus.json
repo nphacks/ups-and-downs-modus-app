@@ -4,9 +4,9 @@
     "default": {
       "type": "graphql",
       "path": "/graphql",
-      "auth": "bearer-token"
+      "auth": "none"
     }
-  },
+  },  
   "models": {
     "text-generator": {
       "sourceModel": "meta-llama/Meta-Llama-3.1-8B-Instruct", 
