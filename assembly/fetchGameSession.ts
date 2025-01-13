@@ -662,7 +662,7 @@ export function fetchGameSession(sessionId: string, maxAge: i32): GameSessionDat
   );
 
   // Use the incrementally built story for summarization
-  sessionData.lifeSummary = SummarizeTheLife(lifeStory);
+  sessionData.lifeSummary = ' ... The summary for this game will begin from here ... ' + SummarizeTheLife(lifeStory);
 
   const saveVars = new neo4j.Variables()
   saveVars.set("sessionId", sessionId)

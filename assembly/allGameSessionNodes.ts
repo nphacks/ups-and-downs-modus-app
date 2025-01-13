@@ -5,20 +5,20 @@ const hostName: string = "my-neo4j"
 @json
 class GameSession {
     gamesession_id: string
-    status: string
+    // status: string
     session_data: string
-    lifeSummary: string = ""
+    // lifeSummary: string = ""
 
     constructor(
         gamesession_id: string,
-        status: string,
+        // status: string,
         session_data: string,
-        lifeSummary: string = ""
+        // lifeSummary: string = ""
     ) {
         this.gamesession_id = gamesession_id;
-        this.status = status
+        // this.status = status
         this.session_data = session_data
-        this.lifeSummary = lifeSummary;
+        // this.lifeSummary = lifeSummary;
     }
 }
 
@@ -28,12 +28,10 @@ export function AllGameSessionNodes(): GameSession[] {
   // Explicitly name each property we want to return
   let query = `
     MATCH (g:GameSession)
-    WHERE g.summary IS NOT null
+    WHERE g.session IS NOT null
     RETURN 
       g.gamesession_id as gamesession_id,
-      g.status as status,
-      g.session_data as session_data,
-      g.summary as summary
+      g.session as session_data
   `
 
   const result = neo4j.executeQuery(hostName, query, vars)
@@ -49,9 +47,9 @@ export function AllGameSessionNodes(): GameSession[] {
     // Access properties directly using the aliases from the query
     const game = new GameSession(
       record.get("gamesession_id"),
-      record.get("status"),
+      // record.get("status"),
       record.get("session_data"),
-      record.get("summary")
+      // record.get("summary")
     )
     gameSessionNodes.push(game)
   }
