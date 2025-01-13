@@ -7,3 +7,4 @@ export * from "./addActionAtAge";
 export * from "./addSituationAtAge";
 export * from "./addEventAtAge";
 export * from "./addSkillAtAge";
+export * from "./analysisChat";
