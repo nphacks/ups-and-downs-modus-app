@@ -12,7 +12,7 @@ const modelName: string = "text-generator"
 export function AnalysisChat(snippet: string): string {
   const model = models.getModel<OpenAIChatModel>(modelName)
   const input = model.createInput([
-    new SystemMessage("You have the conversation of life analysis between analysis bot and the analyzer. Answer the last question prompted by the analyzer."),
+    new SystemMessage("You have the conversation of life analysis between analysis bot and the analyzer. Answer the last question prompted by the analyzer. Respond in few lines, 6 lines max."),
     new UserMessage(snippet)
   ])
 
